@@ -11,7 +11,7 @@ const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
     })
     console.log(params)
     console.log(GITHUB_URL)
-    const response = await fetch(`${GITHUB_URL}/search/users?${params}`) 
+    const response = await fetch(`${GITHUB_URL}/search/users?${params}`,{headers: {Authorization:`token ${GITHUB_TOKEN}`}}) 
 console.log(response)
     const {items} = await response.json()
 
